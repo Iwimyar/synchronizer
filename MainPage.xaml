@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="synchronizer.MainPage"
+             Title="synchronizer"
+             BackgroundColor="#525661"
+             Shell.NavBarIsVisible="False">
+
+    <StackLayout Spacing="20"
+                 Margin="30">
+        
+        <Button Text="Open your video"
+                TextColor="#E1E1E1"
+                Clicked="Open_Clicked"
+                BackgroundColor="#2D3346"/>
+
+        <toolkit:MediaElement x:Name="mediaElement"
+                      ShouldAutoPlay="False"
+                      ShouldShowPlaybackControls="True"
+                      Source="{Binding FileSource}"
+                      HeightRequest="300"
+                      WidthRequest="400"
+                      IsVisible="{Binding FileChosen}" 
+                      />
+    </StackLayout>
+</ContentPage>
